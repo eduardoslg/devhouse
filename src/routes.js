@@ -16,6 +16,8 @@ routes.post('/houses', upload.single('thumbnail'), HouseController.store);
 routes.get('/houses', HouseController.index);
 // Edita uma casa buscando pelo house_id
 routes.put('/houses/:house_id', upload.single('thumbnail'), HouseController.update);
+// Deletando uma casa
+routes.delete('/houses', HouseController.destroy);
 
 
 

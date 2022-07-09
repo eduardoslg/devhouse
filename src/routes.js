@@ -4,6 +4,7 @@ import uploadConfig from './config/upload'
 
 import SessionController from "./controllers/SessionController";
 import HouseController from "./controllers/HouseController";
+import DashBoardController from './controllers/DashBoardController';
 
 const routes = new Router();
 const upload = multer(uploadConfig);
@@ -19,6 +20,10 @@ routes.put('/houses/:house_id', upload.single('thumbnail'), HouseController.upda
 // Deletando uma casa
 routes.delete('/houses', HouseController.destroy);
 
+// Listar as casas que o usuário cadastrou
+routes.get('/dashboard', DashBoardController.show);
+
+// Soliciar reserva em alguma casa
 
 
 export default routes;

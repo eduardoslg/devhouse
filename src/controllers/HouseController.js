@@ -3,6 +3,7 @@ import User from '../models/User';
 
 class HouseController{
 
+  // função de adicionar casas
   async index(req, res){
     const { status } = req.query;
 
@@ -11,6 +12,7 @@ class HouseController{
     return res.json(houses);
   }
 
+  // função de listar as casas
   async store(req, res){
     const { filename } = req.file;
     const { description, price, location, status } = req.body;
@@ -28,6 +30,7 @@ class HouseController{
     return res.json(house);
   }
 
+  // função de atualizar informaçoes de uma casa
   async update(req, res){
     const { filename } = req.file;
     const { house_id } = req.params;
@@ -55,6 +58,7 @@ class HouseController{
     return res.send();
   }
 
+  // deletar casas (apenas quem adicionou a casa (id) pode deletar)
   async destroy(req, res){
     const { house_id } = req.body;
     const { user_id } = req.headers;

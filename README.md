@@ -4,6 +4,7 @@
 yarn init -y
 npm add express
 yarn add sucrase nodemon -D
+yarn add mongoose
 
 
 

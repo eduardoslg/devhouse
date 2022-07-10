@@ -7,6 +7,17 @@ import House from '../models/House';
 // o usuário estiver tentando reservar uma casa com status 'false', retornará erro, e se o usuário estiver tentando reservar
 // uma casa cadastrada com seu próprio id, retornará um erro.
 class ReserveController{
+
+  async index(req, res){
+    const { user_id } = req.headers;
+
+    const reserves = await Reserve.find({
+      user: user_id,
+    }).populate('house');
+
+    return res.json(reserves);
+  }
+
   async store(req, res){
 
     const { user_id } = req.headers;
@@ -39,6 +50,17 @@ class ReserveController{
     await reserve.populate('house');
     await reserve.populate('user');
     return res.json(reserve);
+  }
+
+  async destroy(req, res){
+    const { reserve_id } = req.body;
+
+    await Reserve.findByIdAndDelete({
+      _id: reserve_id
+    });
+
+
+    return res.send();
   }
 }
 

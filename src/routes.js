@@ -27,5 +27,10 @@ routes.get('/dashboard', DashBoardController.show);
 // Soliciar reserva em alguma casa
 routes.post('/houses/:house_id/reserve', ReserveController.store);
 
+// Nessa roda ele vai conseguir listar suas reservas
+routes.get('/reserves', ReserveController.index);
+
+// Rota para deletar/cancelar alguma reserva
+routes.delete('/reserves/cancel', ReserveController.destroy);
 
 export default routes;

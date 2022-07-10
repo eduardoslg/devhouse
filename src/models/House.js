@@ -1,6 +1,7 @@
 import { Schema, model } from "mongoose";
 
 
+  // pra adicionar uma casa, é necessário informar thumbnail, description, price, location, status e o usuário que está cadastrando a casa.
 const HouseSchema = new Schema({
   thumbnail: String,
   description: String,

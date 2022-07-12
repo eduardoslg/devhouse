@@ -7,6 +7,7 @@ yarn add sucrase nodemon -D
 yarn add mongoose
 yarn add multer // pra trabalhar com multipart (insomnia)
 yarn add cors // pra deixar nossa api publica e qualquer um consumir
+yarn add yup // pra verificar validações (ex: usuário não conseguir cadastrar uma casa sem todos parâmetros)
 
 
 

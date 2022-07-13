@@ -1,6 +1,6 @@
 # backend
 
-# alguns comandos no terminal
+# alguns comandos no terminal// algumas bibliotecas utilizadas
 yarn init -y
 npm add express
 yarn add sucrase nodemon -D
